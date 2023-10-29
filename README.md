@@ -1,27 +1,69 @@
-# MovieApp
+# Movie App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+Movie App is a simple Angular application for searching and viewing movie details.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Search for movies by title.
+- View detailed information about each movie.
+- Toggle "Read more" to see the full movie plot.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+Before you begin, ensure you have met the following requirements:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js: Install Node.js and npm from [https://nodejs.org/](https://nodejs.org/).
+- Angular CLI: Install the Angular CLI globally by running `npm install -g @angular/cli`.
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
 
-## Further help
+   ```bash
+   git clone https://github.com/Dhiviya-Bharathi/movie-app.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navigate to the project directory:
+
+    ```bash
+    cd movie-app
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+
+##  Usage
+
+1. Start the development server:
+
+    ```bash
+    ng serve
+
+2. Open your web browser and navigate to http://localhost:4200/ to use the Movie App.
+
+##  Contributing
+
+Contributions are welcome! Here are some ways you can contribute to this project:
+
+Submit bug reports or feature requests by opening issues on GitHub.
+Fork the repository, make changes, and submit a pull request.
+
+##  License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+
