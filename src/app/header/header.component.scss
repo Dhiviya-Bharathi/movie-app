@@ -1,4 +1,19 @@
 header {
     background-color: #8F3B76;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 1rem;
+
+    .logo {
+        background-image: url('../../assets/images/film.png');
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 }

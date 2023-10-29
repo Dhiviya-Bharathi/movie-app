@@ -1,4 +1,5 @@
-<h1>Featured movies for 2023</h1>
+<h1 *ngIf="movieList && movieList.length > 0">Search results</h1>
 <div class="results-container">
+    <h1 *ngIf="!movieList || (movieList && movieList.length === 0)" class="default-message">Search by movie title to list movies</h1>
     <app-list-item *ngFor="let movie of movieList" [movie]="movie"></app-list-item>   
 </div>

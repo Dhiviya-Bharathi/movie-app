@@ -1,3 +1,6 @@
 <app-header></app-header>
 <app-search (searchTermChange)="onSearchTermChange($event)"></app-search>
-<app-results [movieList]="movies | async"></app-results>
+<div class="main-content"> 
+  <app-results [movieList]="movies | async"></app-results>
+  <app-side-bar></app-side-bar>
+</div>

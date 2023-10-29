@@ -1,14 +1,21 @@
 h1 {
     text-align: center;
-    color: rgb(76, 76, 76);
 }
 .results-container { 
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
 
     app-list-item {
         width: 30%;
         max-width: 400px;
         margin: 20px;
+    }
+
+    .default-message {
+        align-self: center;
+        color: #eee;
+        font-size: 3rem;
     }
 }

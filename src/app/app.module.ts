@@ -9,6 +9,8 @@ import { SearchComponent } from './search/search.component';
 import { ResultsComponent } from './results/results.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { FormsModule } from '@angular/forms';
+import { ReadMoreComponent } from './read-more/read-more.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     SearchComponent,
     ResultsComponent,
-    ListItemComponent
+    ListItemComponent,
+    ReadMoreComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

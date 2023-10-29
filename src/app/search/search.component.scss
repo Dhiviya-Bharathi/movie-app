@@ -1,4 +1,27 @@
 .search-container {
     background-color: #C7417B;
-    height: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        width: 70%;
+        height: 50px;
+        font-size: 1.5rem;
+        border: 0;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    button {
+        height: 50px;
+        width: 60px;
+        margin-left: -62px;
+        background-color: #1f306e;
+        color: #fff;
+        box-shadow: none;
+        border: 0;
+        cursor: pointer;
+    }
 }

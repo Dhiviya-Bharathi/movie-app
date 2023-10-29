@@ -2,25 +2,57 @@
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     display: flex;
+    background-color: #fff;
+    min-height: 280px;
 
     img {
-        width: 40%;
+        max-width:150px;
+        max-height:222px;
+        width: auto;
+        height: auto;
+        border-radius: 3px;
     }
 
     .content {
-        padding: 10px;
+        padding: 0 10px;
 
         h3, h5 {
             display: inline-block;
-            color: rgb(76, 76, 76);
+        }
+
+        app-read-more {
+            font-size: .8rem;
         }
 
         .year {
             margin-left: 8px;
         }
+    }
 
-        .plot {
-            color: rgb(143, 143, 143);
+    &.small {
+        min-height: 150px;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+
+        img {
+            max-width:100px;
+            max-height:151px;
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .card-container {
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            max-width:unset;
+            max-height:unset;
+        }
+
+        .content { 
+            width: 100%;
         }
     }
 }

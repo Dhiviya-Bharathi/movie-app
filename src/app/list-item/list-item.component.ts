@@ -9,4 +9,7 @@ import { Movie } from '../movie';
 export class ListItemComponent {
   @Input()
   movie: Movie;
+
+  @Input()
+  isSmall: boolean;
 }
