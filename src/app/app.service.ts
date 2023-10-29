@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, map, switchMap } from 'rxjs';
+import { Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
 import { Movie, SearchResponse } from './movie';
 
 @Injectable({
@@ -35,7 +35,8 @@ export class AppService {
   // Returns an Observable of an array of Movie objects
   private searchMovies(search: string): Observable<Movie[]> {
     return this.httpClient.get<SearchResponse>(`${this.url}?s=${search}&apiKey=${this.apiKey}`).pipe(
-      map(movies => movies.Search)
+      map(movies => movies.Search),
+      catchError(() => of([]))
     );
   }
 
@@ -56,8 +57,8 @@ export class AppService {
         Plot: fullResponse.Plot,
         Awards: fullResponse.Awards,
         Website: fullResponse.Website
-      })
-      )
+      })),
+      catchError(() => of(undefined))
     );
   }
 }
