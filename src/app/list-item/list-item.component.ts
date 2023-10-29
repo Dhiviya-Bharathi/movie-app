@@ -11,5 +11,5 @@ export class ListItemComponent {
   movie: Movie;
 
   @Input()
-  isSmall: boolean;
+  isSmall: boolean = false;
 }

@@ -6,22 +6,25 @@
     align-items: center;
 
     input {
-        width: 70%;
+        width: 50%;
         height: 50px;
         font-size: 1.5rem;
         border: 0;
-        border-radius: 3px;
+        border-radius: 10px;
         padding-left: 8px;
+        outline: none;
     }
 
     button {
         height: 50px;
-        width: 60px;
-        margin-left: -62px;
+        width: 120px;
+        margin-left: -59px;
         background-color: #1f306e;
         color: #fff;
         box-shadow: none;
         border: 0;
         cursor: pointer;
+        border-radius:  0 10px 10px 0;
+        font-size: 1rem;
     }
 }

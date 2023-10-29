@@ -1,8 +1,15 @@
 <div [class]="isSmall ? 'card-container small' : 'card-container'">
-    <img [src]="movie.Poster" alt="">
+    <div>
+        <p *ngIf="!isSmall" class="rate">{{movie.Rated}}</p>
+        <img [src]="movie.Poster" alt="">
+        
+    </div>
     <div class="content">
-        <h3 class="title">{{movie.Title}}<span class="year">({{movie.Year}})</span></h3>
-        <div class="awards">{{movie.Awards}}</div>
+        <h3 class="title">{{movie.Title}}<span class="year">({{movie.Year}})</span><span class="type" [hidden]="isSmall">{{movie.Type}}</span></h3>
+        <p *ngIf="!isSmall">{{movie.Genre}}</p>
+        <p *ngIf="!isSmall"><strong>Director:</strong> {{movie.Director}}</p>
+        <p *ngIf="!isSmall"><strong>Actors:</strong> {{movie.Actors}}</p>
+        <p class="awards">{{movie.Awards}}</p>
         <app-read-more [content]="movie.Plot"></app-read-more>
     </div>
 </div>
