@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-results',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent {
+  @Input()
+  movieList: Movie[];
 
+  constructor() {
+    this.movieList = [];
+  }
 }

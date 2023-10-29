@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
+import { Movie } from './movie';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +9,15 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private appService: AppService) { }
+  movies: Observable<Movie[]>;
+
+  constructor(private appService: AppService) {}
+
   ngOnInit() {
-    this.appService.getTopMovieResults('game').subscribe(data => {
-      // Here, 'data' contains the desired attributes of the top 5 results.
-      console.log(data);
-    });
+    this.movies = this.appService.getFeaturedMovies();
+  }
+
+  onSearchTermChange(search: string) {
+    this.movies = this.appService.getTopMovieResults(search);
   }
 }

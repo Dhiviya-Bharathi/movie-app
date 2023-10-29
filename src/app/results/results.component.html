@@ -1,1 +1,4 @@
-<p>results works!</p>
+<h1>Featured movies for 2023</h1>
+<div class="results-container">
+    <app-list-item *ngFor="let movie of movieList" [movie]="movie"></app-list-item>   
+</div>

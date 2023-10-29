@@ -1,0 +1,26 @@
+.card-container {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    display: flex;
+
+    img {
+        width: 40%;
+    }
+
+    .content {
+        padding: 10px;
+
+        h3, h5 {
+            display: inline-block;
+            color: rgb(76, 76, 76);
+        }
+
+        .year {
+            margin-left: 8px;
+        }
+
+        .plot {
+            color: rgb(143, 143, 143);
+        }
+    }
+}
