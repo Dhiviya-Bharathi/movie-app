@@ -1,8 +1,0 @@
-<p>
-    {{ content | slice: 0:isReadMore ? 200 : content.length }}
-    <span *ngIf="content.length > 200">
-      <a (click)="toggleReadMore()">
-        {{ isReadMore ? 'Read more' : 'Read less' }}
-      </a>
-    </span>
-  </p>

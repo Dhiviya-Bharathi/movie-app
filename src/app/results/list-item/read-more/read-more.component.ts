@@ -10,7 +10,7 @@ export class ReadMoreComponent implements OnInit {
   isReadMore: boolean = false;
 
   ngOnInit(): void {
-    this.isReadMore = this.content.length > 200;
+    this.isReadMore = this.content?.length > 200;
   }
 
   toggleReadMore() {

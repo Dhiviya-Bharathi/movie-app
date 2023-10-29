@@ -10,6 +10,7 @@ export interface Movie {
     Actors: string;
     Plot: string;
     Awards: string;
+    Website: string;
 }
 
 export interface SearchResponse {

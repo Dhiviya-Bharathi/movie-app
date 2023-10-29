@@ -46,7 +46,8 @@ export class AppService {
         Director: fullResponse.Director,
         Actors: fullResponse.Actors,
         Plot: fullResponse.Plot,
-        Awards: fullResponse.Awards
+        Awards: fullResponse.Awards,
+        Website: fullResponse.Website
       })
       )
     );

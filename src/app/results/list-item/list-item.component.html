@@ -1,11 +1,13 @@
-<div [class]="isSmall ? 'card-container small' : 'card-container'">
+<div class="card-container" [class.small]="isSmall" *ngIf="movie">
     <div>
         <p *ngIf="!isSmall" class="rate">{{movie.Rated}}</p>
         <img [src]="movie.Poster" alt="">
-        
     </div>
     <div class="content">
-        <h3 class="title">{{movie.Title}}<span class="year">({{movie.Year}})</span><span class="type" [hidden]="isSmall">{{movie.Type}}</span></h3>
+        <h3 class="title">{{movie.Title}}
+            <span class="year">({{movie.Year}})</span>
+            <span class="type" *ngIf="!isSmall">{{movie.Type}}</span>
+        </h3>
         <p *ngIf="!isSmall">{{movie.Genre}}</p>
         <p *ngIf="!isSmall"><strong>Director:</strong> {{movie.Director}}</p>
         <p *ngIf="!isSmall"><strong>Actors:</strong> {{movie.Actors}}</p>

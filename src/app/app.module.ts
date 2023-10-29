@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { ResultsComponent } from './results/results.component';
-import { ListItemComponent } from './list-item/list-item.component';
+import { ListItemComponent } from './results/list-item/list-item.component';
 import { FormsModule } from '@angular/forms';
-import { ReadMoreComponent } from './read-more/read-more.component';
+import { ReadMoreComponent } from './results/list-item/read-more/read-more.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({

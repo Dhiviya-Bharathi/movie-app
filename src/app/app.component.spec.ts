@@ -1,29 +1,55 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppService } from './app.service';
+import { of } from 'rxjs';
+import { Movie } from './movie';
+import { FormsModule } from '@angular/forms';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  const mockMovies: Movie[] = [{ Title: 'Movie 1' }, { Title: 'Movie 2' }] as Movie[];
+  let AppServiceMock = {
+    getTopMovieResults: (search: string) => {
+      return of(mockMovies);
+    },
+    getFeaturedMovies: () => {
+      return of(mockMovies);
+    }
+  }
+
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+  let appService: AppService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      providers: [{ provide: AppService, useValue: AppServiceMock }],
+      imports: [FormsModule, AppModule]
+    }).compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    appService = TestBed.inject(AppService);
+    fixture.detectChanges();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'movie-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('movie-app');
-  });
+  it('should update movies when onSearchTermChange is called', () => {
+    spyOn(appService, 'getTopMovieResults').and.returnValue(of(mockMovies));
+    const searchTerm = 'search term';
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('movie-app app is running!');
+    component.onSearchTermChange(searchTerm);
+
+    component.movies.subscribe((movies: Movie[]) => {
+      expect(movies.length).toBe(2); // Assuming the mock service returns 2 movies
+      expect(movies[0].Title).toBe('Movie 1');
+      expect(movies[1].Title).toBe('Movie 2');
+    });
   });
 });

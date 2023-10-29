@@ -9,8 +9,4 @@ import { Movie } from '../movie';
 export class ResultsComponent {
   @Input()
   movieList: Movie[];
-
-  constructor() {
-    this.movieList = [];
-  }
 }
