@@ -10,9 +10,11 @@ export class ReadMoreComponent implements OnInit {
   isReadMore: boolean = false;
 
   ngOnInit(): void {
+    // Check if the content's length exceeds 200 characters and set the "Read more" flag accordingly
     this.isReadMore = this.content?.length > 200;
   }
 
+  // Method to toggle "Read more" and "Read less" state
   toggleReadMore() {
     this.isReadMore = !this.isReadMore;
   }

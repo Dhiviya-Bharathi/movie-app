@@ -13,6 +13,11 @@ export class AppComponent {
 
   constructor(private appService: AppService) {}
 
+  /*
+    Method to handle changes in the search term
+    It triggers a call to AppService to get the top movie results for the provided search term
+    and assigns the result to the 'movies' property
+  */
   onSearchTermChange(search: string) {
     this.movies = this.appService.getTopMovieResults(search);
   }

@@ -11,6 +11,7 @@ export class SearchComponent {
   @Output() searchTermChange: EventEmitter<string> = new EventEmitter<string>();
 
   onSearch() {
+    // Emit the search term to notify parent components about the change
     this.searchTermChange.emit(this.searchTerm);
   }
 }

@@ -14,6 +14,7 @@ export class SideBarComponent {
   constructor(private appService: AppService) {}
 
   ngOnInit() {
+    // Fetch featured movies using the AppService and assign the result to the 'movies' property
     this.movies = this.appService.getFeaturedMovies();
   }
 }
